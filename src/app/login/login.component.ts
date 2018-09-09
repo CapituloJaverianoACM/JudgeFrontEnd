@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   onSubmit():void {
     this.userService.validateLogin(this.user)
       .subscribe(response => {
+        localStorage.setItem('token', response.token);
         console.log(response);
       });
     this.dialogRef.close();
