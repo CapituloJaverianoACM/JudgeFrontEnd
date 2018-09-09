@@ -13,7 +13,7 @@
         <mat-card-content>
         <p>
           {{current_user.first_name}} {{current_user.last_name}} <br>
-          {{current_user.career}}
+          {{current_user.profile.career}}
         </p>
       </mat-card-content>
       <mat-card-actions>
@@ -46,7 +46,7 @@
               <tr>
                   <td>
                     <mat-form-field>
-                      <input matInput placeholder="Usuario" [(ngModel)]="new_user.username" name="username" required>
+                      <input matInput [placeholder]="new_user.username"  name="username" readonly>
                     </mat-form-field>
                   </td>
                 </tr>

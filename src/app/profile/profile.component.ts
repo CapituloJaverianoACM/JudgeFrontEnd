@@ -26,8 +26,24 @@ export class ProfileComponent implements OnInit {
     this.current_user.profile.career = "Colegio femenino";
     this.current_user.username = "ElJohanXXX69";
     this.current_user.email = "gmail@johan.com";
-
     this.new_user = this.current_user;
+  }
+
+
+  onSubmit():void {
+    //console.log("algo");
+    if(this.password === this.rePassword){
+      console.log("iguales");
+      this.new_user.password = this.password;
+    }
+    else{
+      console.log("paila"); // TODO - Manage error
+    }
+    let ans = this.userService.editUser(this.new_user)
+      .subscribe(response => {
+        console.log(response);
+      });
+    console.log(ans); 
   }
 
 }
