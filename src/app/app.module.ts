@@ -10,12 +10,16 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
