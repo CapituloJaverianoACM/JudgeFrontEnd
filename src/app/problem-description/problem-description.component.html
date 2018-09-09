@@ -12,7 +12,8 @@
       <p>{{problem.description.output_format}}</p>
       <h4>Explanation</h4>
       <p>{{problem.description.explanation}}</p>
-      <input type="file" #file (change)="onFilesAdded()" />
+      <input type="file" id="source_code" (change)="onFileChange($event.target.files)" #fileInput>
+      <button mat-raised-button color="primary" (click)="createSubmission()">Enviar</button>
     </div>
   </div>
 </div>

@@ -12,6 +12,13 @@ const httpOptions = { // TODO - Make a file with this constant
     })
 };
 
+const httpOptionsToUploadFile = { // TODO - Make a file with this constant
+  headers: new HttpHeaders(
+    {
+      'Authorization': 'Token ' + localStorage.getItem('token')
+    })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,18 +29,6 @@ export class SubmissionService {
   constructor(private http: HttpClient) { }
 
 
-  public makeSubmission(submission: Submission): Observable<Submission> {
-
-    let formData = new FormData();
-
-    formData.append('problem', submission.problem.toString());
-
-    formData.append("source_code", submission.source_code);
-
-    return this.http.post<Submission>(this.problemUrl, formData, httpOptions);
-
-  }
-
 
   public getSubmissions(): Observable<Submission[]> {
 
@@ -41,4 +36,15 @@ export class SubmissionService {
 
   }
 
+  private submissionUrl = baseURL + '/submission/';
+
+  constructor(private http: HttpClient) { }
+
+  public makeSubmission(submission: Submission): Observable<Submission> {
+    let formData = new FormData();
+    formData.append('problem', submission.problem.toString());
+    formData.append("source_code", submission.source_code);
+    
+    return this.http.post<Submission>(this.submissionUrl, formData, httpOptionsToUploadFile);
+  }
 }
