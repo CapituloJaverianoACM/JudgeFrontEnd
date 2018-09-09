@@ -15,6 +15,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   private usersUrl = baseURL + '/user/';
