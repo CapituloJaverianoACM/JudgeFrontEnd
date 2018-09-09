@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../models/User';
-//import { resolve } from 'path';
 import { baseURL } from '../models/baseurl';
 import { Observable, of } from 'rxjs';
 
