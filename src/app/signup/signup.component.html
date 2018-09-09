@@ -8,14 +8,14 @@
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Nomre" [(ngModel)]="user.firstname" name="username" required>
+              <input matInput placeholder="Nomre" [(ngModel)]="user.first_name" type="text" name="first_name" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
             <td>
               <mat-form-field>
-                <input matInput placeholder="Apellido" [(ngModel)]="user.lastname" name="username" required>
+                <input matInput placeholder="Apellido" [(ngModel)]="user.last_name" type="text" name="last_name" required>
               </mat-form-field>
             </td>
           </tr>
@@ -29,28 +29,28 @@
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Correo electronico"  [(ngModel)]="user.email" name="password" required>
+              <input matInput placeholder="Correo electronico"  [(ngModel)]="user.email" type="email" name="email" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Contraseña"  type="password" [(ngModel)]="password" name="username" required>
+              <input matInput placeholder="Contraseña"  type="password" [(ngModel)]="password" name="password" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Verifique contraseña" type="password" [(ngModel)]="rePassword" name="username" required>
+              <input matInput placeholder="Verifique contraseña" type="password" [(ngModel)]="rePassword" name="rePassword" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Colegio" [(ngModel)]="user.career" name="username" required>
+              <input matInput placeholder="Colegio" [(ngModel)]="user.profile.career" type="text" name="career" required>
             </mat-form-field>
           </td>
         </tr>
@@ -64,3 +64,5 @@
   </mat-card-content>
   
 </mat-card>
+
+<p> {{user | json}}</p>
