@@ -1,28 +1,27 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-      <table cellspacing="0">
-        <tr>
-          <td>
+<mat-toolbar color="primary">
+    Login
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+<p>{{ user | json }}</p>
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+        <p>
             <mat-form-field>
-              <input matInput placeholder="Username" [(ngModel)]="user.username" name="username" required>
+                <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
+                <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
             </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <mat-form-field>
-              <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" required>
+                <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+                <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
             </mat-form-field>
-          </td>
-        </tr>
-      </table>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
-  </mat-card-actions>
-</mat-card>
+        </p>
+        <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <span class="flex-spacer"></span>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid">Login</button>
+    </mat-dialog-actions>
+</form>

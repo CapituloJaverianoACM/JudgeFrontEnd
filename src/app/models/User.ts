@@ -6,4 +6,5 @@ export class User {
     public password: string;
     public career: string;
     public rol: number;
+    public remember:boolean;
 }
