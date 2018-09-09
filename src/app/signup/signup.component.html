@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Sign-up</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Nomre" [(ngModel)]="user.first_name" type="text" name="first_name" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="Apellido" [(ngModel)]="user.last_name" type="text" name="last_name" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Usuario" [(ngModel)]="user.username" name="username" required>
+                </mat-form-field>
+              </td>
+            </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Correo electronico"  [(ngModel)]="user.email" type="email" name="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Contraseña"  type="password" [(ngModel)]="password" name="password" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Verifique contraseña" type="password" [(ngModel)]="rePassword" name="rePassword" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Colegio" [(ngModel)]="user.profile.career" type="text" name="career" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary" (click)="onSubmit()">Sign-up</button>
+      </mat-card-actions>
+
+    </form>
+  </mat-card-content>
+  
+</mat-card>

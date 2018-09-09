@@ -4,18 +4,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import 'hammerjs';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProblemasComponent } from './problemas/problemas.component';
+import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
+import { MySubmissionsComponent } from './my-submissions/my-submissions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent,
+    ProfileComponent,
+    ProblemasComponent,
+    ProblemDescriptionComponent,
+    MySubmissionsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +35,9 @@ import { HeaderComponent } from './header/header.component';
     CustomMaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   entryComponents: [LoginComponent],

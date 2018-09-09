@@ -1,0 +1,15 @@
+<div style="padding: 10px;">
+  <h2>Lista de problemas</h2>
+  <ul>
+      <li *ngFor="let prob of lista">
+        <a [routerLink]="['/problems', prob.id]">
+          <div class="listado">
+            <p>ID: {{prob.id}}</p>
+            <p>Nombre: {{prob.name}}</p> 
+            <p>Tema: {{prob.theme}}</p> 
+            <p>Dificultad: {{prob.difficulty}}</p>
+          </div>
+        </a>
+      </li>
+  </ul>
+</div>

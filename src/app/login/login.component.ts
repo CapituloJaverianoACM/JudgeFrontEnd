@@ -13,8 +13,9 @@ import { User } from '../models/User'
 export class LoginComponent implements OnInit {
   public user: User;
 
-  constructor(private userService: UserService, 
-              public dialogRef: MatDialogRef<LoginComponent>
+  constructor(
+    private userService: UserService, 
+    public dialogRef: MatDialogRef<LoginComponent>
             ) { }
 
   ngOnInit() {
@@ -23,10 +24,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit():void {
-    let ans = this.userService.validateLogin();
+    this.userService.validateLogin(this.user)
+      .subscribe(response => {
+        localStorage.setItem('token', response.token);
+        console.log(response);
+      });
     this.dialogRef.close();
-    console.log(ans);
-    
   }
 
 }

@@ -1,0 +1,18 @@
+<div style="padding: 5px; width: 75%;">
+  <h2>
+    Mis envios
+  </h2>
+  <table>
+    <tr>
+      <th>Hora</th>
+      <th>Problema</th>
+      <th>Resultado</th>
+    </tr>
+    <tr *ngFor="let sub of lista_submissions" (click)="onSelect(hero)">
+      <td>{{sub.time_stamp | date:'medium'}} </td>
+      <td>{{sub.problem}}</td>
+      <td>{{sub.veredict}}</td>
+
+    </tr>
+  </table>
+</div>
