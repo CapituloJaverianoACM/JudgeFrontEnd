@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Submission } from '../models/Submission';
 import { baseURL } from '../models/baseurl';
 import { Observable, of } from 'rxjs';
@@ -24,6 +23,18 @@ const httpOptionsToUploadFile = { // TODO - Make a file with this constant
   providedIn: 'root'
 })
 export class SubmissionService {
+
+  private problemUrl = baseURL + '/submission/user/';
+
+  constructor(private http: HttpClient) { }
+
+
+
+  public getSubmissions(): Observable<Submission[]> {
+
+    return this.http.get<Submission[]>(this.problemUrl, httpOptions);
+
+  }
 
   private submissionUrl = baseURL + '/submission/';
 

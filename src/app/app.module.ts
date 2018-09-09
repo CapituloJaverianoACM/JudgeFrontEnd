@@ -14,7 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProblemasComponent } from './problemas/problemas.component';
 import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
+import { MySubmissionsComponent } from './my-submissions/my-submissions.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProblemDescriptionComponent } from './problem-description/problem-descr
     HeaderComponent,
     SignupComponent,
     ProfileComponent,
-    ProblemDescriptionComponent
+    ProblemasComponent,
+    ProblemDescriptionComponent,
+    MySubmissionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 import { Problem } from '../models/Problem';
 import { baseURL } from '../models/baseurl';
 import { Observable, of } from 'rxjs';
@@ -25,4 +26,9 @@ export class ProblemService {
   public getProblem(id: number):Observable<Problem> {
     return this.http.get<Problem>(this.problemUrl + id + '/', httpOptions);
   }
+  getProblemList():Observable<Problem[]> {
+    return this.http.get<Problem[]>(this.problemUrl , httpOptions);
+  }
+
+
 }

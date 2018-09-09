@@ -1,0 +1,16 @@
+.listado{
+    width: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #673ab7;;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.listado:hover{
+    background-color: #9575CD;
+}
