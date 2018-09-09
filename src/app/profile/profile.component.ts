@@ -21,11 +21,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     
-    this.current_user.first_name = "Johan";
-    this.current_user.last_name = "Murillo";
-    this.current_user.profile.career = "Colegio femenino";
-    this.current_user.username = "ElJohanXXX69";
-    this.current_user.email = "gmail@johan.com";
+    this.current_user.first_name = '';
+    this.current_user.last_name = '';
+    this.current_user.profile.career = '';
+    this.current_user.username = '';
+    this.current_user.email = '';
     this.new_user = this.current_user;
   }
 

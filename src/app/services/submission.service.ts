@@ -24,21 +24,13 @@ const httpOptionsToUploadFile = { // TODO - Make a file with this constant
 })
 export class SubmissionService {
 
-  private problemUrl = baseURL + '/submission/user/';
-
-  constructor(private http: HttpClient) { }
-
-
-
-  public getSubmissions(): Observable<Submission[]> {
-
-    return this.http.get<Submission[]>(this.problemUrl, httpOptions);
-
-  }
-
   private submissionUrl = baseURL + '/submission/';
 
   constructor(private http: HttpClient) { }
+
+  public getSubmissions(): Observable<Submission[]> {
+    return this.http.get<Submission[]>(this.submissionUrl+'user/', httpOptions);
+  }
 
   public makeSubmission(submission: Submission): Observable<Submission> {
     let formData = new FormData();

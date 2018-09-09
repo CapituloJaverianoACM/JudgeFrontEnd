@@ -26,7 +26,7 @@ export class ProblemService {
   public getProblem(id: number):Observable<Problem> {
     return this.http.get<Problem>(this.problemUrl + id + '/', httpOptions);
   }
-  getProblemList():Observable<Problem[]> {
+  public getProblemList():Observable<Problem[]> {
     return this.http.get<Problem[]>(this.problemUrl , httpOptions);
   }
 
