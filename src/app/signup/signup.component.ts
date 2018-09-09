@@ -23,11 +23,15 @@ export class SignupComponent implements OnInit {
   onSubmit():void {
     if(this.password === this.rePassword){
       console.log("iguales");
+      this.user.password = this.password;
     }
     else{
-      console.log("paila");
+      console.log("paila"); // TODO - Manage error
     }
-    let ans = this.userService.validateSignup();
+    let ans = this.userService.registerUser(this.user)
+      .subscribe(response => {
+        console.log(response);
+      });
     console.log(ans);
     
   }

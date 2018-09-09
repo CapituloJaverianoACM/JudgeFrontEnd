@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
 import 'hammerjs';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
@@ -17,6 +19,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    HeaderComponent,
     SignupComponent,
     ProfileComponent,
     EditProfileComponent
@@ -26,9 +29,12 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     BrowserAnimationsModule,
     CustomMaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
