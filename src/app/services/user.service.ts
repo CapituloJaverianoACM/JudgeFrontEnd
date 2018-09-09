@@ -9,7 +9,8 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Authorization' : 'Token '+'983d4510434c3e508d1fde0735f8858c3c6f5f60' }) //TODO - ese token esta quemado
+
 };
 
 @Injectable({
@@ -33,6 +34,10 @@ export class UserService {
   registerUser(newUser: User):Observable<User>{
     return this.http.post<User>(this.usersUrl, newUser, httpOptions);
   } 
+
+  editUser(newUser: User):Observable<User>{
+    return this.http.put<User>(this.usersUrl, newUser, httpOptions);
+  }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
