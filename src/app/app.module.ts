@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProblemasComponent } from './problemas/problemas.component';
+import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProblemasComponent } from './problemas/problemas.component';
     HeaderComponent,
     SignupComponent,
     ProfileComponent,
-    ProblemasComponent
+    ProblemasComponent,
+    ProblemDescriptionComponent
   ],
   imports: [
     BrowserModule,
