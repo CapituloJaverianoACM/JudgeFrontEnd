@@ -23,8 +23,8 @@ export class ProblemService {
 
   constructor(private http: HttpClient) { }
 
-  getProblem(id: number):Observable<Problem> {
-    return this.http.get<Problem>(this.problemUrl + id);
+  public getProblem(id: number):Observable<Problem> {
+    return this.http.get<Problem>(this.problemUrl + id + '/', httpOptions);
   }
   getProblemList():Observable<Problem[]> {
     return this.http.get<Problem[]>(this.problemUrl , httpOptions);
