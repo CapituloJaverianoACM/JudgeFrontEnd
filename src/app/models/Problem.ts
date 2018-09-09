@@ -1,6 +1,7 @@
 import { Description } from './Description';
 
 export class Problem {
+    public id: number;
     public name: string;
     public max_score: number;
     public difficulty: number;

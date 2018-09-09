@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 import { Problem } from '../models/Problem';
 import { baseURL } from '../models/baseurl';
 import { Observable, of } from 'rxjs';
@@ -18,11 +19,16 @@ const httpOptions = {
 })
 export class ProblemService {
 
-  private problemUrl = baseURL + '/user/';
+  private problemUrl = baseURL + '/problem/';
 
   constructor(private http: HttpClient) { }
 
   getProblem(id: number):Observable<Problem> {
     return this.http.get<Problem>(this.problemUrl + id);
   }
+  getProblemList():Observable<Problem[]> {
+    return this.http.get<Problem[]>(this.problemUrl , httpOptions);
+  }
+
+
 }
