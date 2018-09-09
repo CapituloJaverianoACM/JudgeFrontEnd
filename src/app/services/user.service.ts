@@ -13,4 +13,8 @@ export class UserService {
     return "Granted";
   }
 
+  validateSignup ():string{
+    return "bien";
+  }
+
 }
