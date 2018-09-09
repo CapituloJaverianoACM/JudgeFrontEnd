@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
     
     this.current_user.first_name = "Johan";
     this.current_user.last_name = "Murillo";
-    this.current_user.career = "Colegio femenino";
+    this.current_user.profile.career = "Colegio femenino";
     this.current_user.username = "ElJohanXXX69";
     this.current_user.email = "gmail@johan.com";
 
