@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+
+import { LoginComponent } from "../login/login.component";
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
+
+  openLoginDialogForm(): void {
+    const dialogConfig = new MatDialogConfig();
+    this.dialog.open(LoginComponent, dialogConfig);
+  }
+
 
 }
