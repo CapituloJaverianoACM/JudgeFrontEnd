@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MatDialogRef } from "@angular/material";
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +16,6 @@ export class SignupComponent implements OnInit {
 
   /**
    * Closes the dialog window.
-   * @return {void}
    */
   onCloseClicked(): void {
     this.dialogRef.close();
