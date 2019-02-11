@@ -30,6 +30,9 @@ import { SignupComponent } from './components/signup/signup.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [LoginComponent]
+  entryComponents: [
+    LoginComponent, 
+    SignupComponent
+  ]
 })
 export class AppModule { }

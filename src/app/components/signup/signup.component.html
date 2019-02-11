@@ -1,3 +1,45 @@
-<p>
-  signup works!
-</p>
+<div class="container" fxLayout="row" fxLayoutAlign="space-evenly center">
+  <div fxFlex="60%">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
+      <h1 fxFlexAlign="center" class="mat-display-2">Create Account</h1>
+      <div fxLayout="row" fxLayoutGap="2rem">
+        <fa name="facebook" size="2x" class="signup-form__icon"></fa>
+        <fa name="google" size="2x" class="signup-form__icon"></fa>
+      </div>
+      <form fxFlexAlign="center" fxLayout="column">
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" type="text">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" type="text">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="Phone Number">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" type="password">
+        </mat-form-field>
+      </form>
+      <a mat-button href="#" fxFlexAlign="center" color="accent">Forgot your password?</a>
+      <button mat-raised-button color="primary" class="login-invitation__btn">Login</button>
+    </div>
+  </div>
+  <div fxFlex="40%" class="login-invitation">
+    <div fxLayout="row" fxLayoutAlign="end end">
+        <mat-icon class="close-btn" (click)="onCloseClicked()">close</mat-icon>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-evenly center">
+      <h1 fxFlexAlign="center" class="mat-display-2 login-invitation__heading">Welcome Back!</h1>
+      <p class="mat-body">To keep practicing and progressing please login with your personal information</p>
+      <button mat-stroked-button color="accent" class="login-invitation__btn">Login</button>
+    </div>
+  </div>
+</div>
