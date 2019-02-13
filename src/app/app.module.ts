@@ -12,13 +12,19 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { StandComponent } from './components/scoreboard/stand/stand.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ScoreboardComponent,
+    NavbarComponent,
+    StandComponent
   ],
   imports: [
     BrowserModule,
