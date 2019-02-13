@@ -1,0 +1,40 @@
+@import "../../../abstract/variables.scss";
+
+.container {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    height: 100%;
+}
+
+.navigation {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+
+    &__link {
+        text-transform: capitalize;
+        height: 100%;
+        &--active{
+            border-bottom: 5px solid $color-accent;
+            border-radius: 0;
+        }
+    }
+
+    &__profile-icon {
+        padding-right: 20px;
+    }
+
+    &__avatar {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        margin-left: 3rem;
+    }
+
+}
