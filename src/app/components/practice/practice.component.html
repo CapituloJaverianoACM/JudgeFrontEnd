@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+<div fxLayout="column" fxLayoutAlign="space-around center" class="practice">
+  <h1 class="mat-display-4 practice__tittle">Select one and have fun!</h1>
+</div>
+<div *ngFor="let problem of dummyProblems">
+  <app-card [problem]="problem"></app-card>
+</div>
