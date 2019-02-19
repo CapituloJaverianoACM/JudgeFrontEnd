@@ -15,6 +15,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StandComponent } from './components/scoreboard/stand/stand.component';
+import { PracticeComponent } from './components/practice/practice.component';
+import { CardComponent } from './components/practice/card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { StandComponent } from './components/scoreboard/stand/stand.component';
     SignupComponent,
     ScoreboardComponent,
     NavbarComponent,
-    StandComponent
+    StandComponent,
+    PracticeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

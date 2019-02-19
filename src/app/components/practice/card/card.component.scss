@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+@import '../../../../abstract/variables.scss';
+.problem-card {
+    padding: 2rem 2rem;
+    margin: 1rem 10rem;
+
+    &__tittle {
+        text-transform: capitalize;
+        display: inline;
+    }
+
+    &__subtittle {
+        margin-bottom: 0;
+
+        &--easy {
+            color: $color-primary;
+        }
+
+        &--medium {
+            color: $color-primary-dark;
+        }
+
+        &--hard {
+            color: $color-accent;
+        }
+    }
+
+    &__button {
+        height: 3.4rem;
+        min-width: 500px; 
+        &--text {
+            padding: 3rem;
+            color: $color-white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+    
+    &:hover{
+        @include mat-elevation(15);
+    }
+}
