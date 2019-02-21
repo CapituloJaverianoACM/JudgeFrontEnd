@@ -5,10 +5,10 @@
   </mat-card-header>
   <div fxFlex fxLayout="row" fxLayoutAlign="end center">
     <ng-container *ngIf="problem.isSolved; else showNotSolvedButton">
-      <button mat-stroked-button color="accent" class="problem-card__button"><span class="problem-card__button--text">Solved</span></button>
+      <button mat-stroked-button color="accent" class="problem-card__button" (click)="goToProblem()"><span class="problem-card__button--text">Solved</span></button>
     </ng-container>
     <ng-template #showNotSolvedButton>
-        <button mat-raised-button color="accent" class="problem-card__button"><span class="problem-card__button--text">Solve Problem</span></button>
+        <button mat-raised-button color="accent" class="problem-card__button" (click)="goToProblem()"><span class="problem-card__button--text">Solve Problem</span></button>
     </ng-template>
     
   </div>

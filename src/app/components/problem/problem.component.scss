@@ -1,0 +1,16 @@
+.problem {
+    margin: 2rem 10rem;
+
+    &__card {
+        margin: 2rem 0;
+        padding: 3rem;
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__section-heading {
+        margin: 3rem 0 1rem;
+    }
+}

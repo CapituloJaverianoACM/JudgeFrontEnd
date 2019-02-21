@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Problem } from 'src/app/shared/problem';
 import { Difficulty } from 'src/app/shared/difficulty.enum';
 
@@ -11,7 +13,7 @@ export class CardComponent implements OnInit {
 
   @Input() problem: Problem;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,10 @@ export class CardComponent implements OnInit {
         return 'problem-card__subtittle--hard';
         break;
     }
+  }
+
+  private goToProblem():void {
+    this.router.navigate(['problem']);
   }
 
 }

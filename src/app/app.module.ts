@@ -17,6 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { StandComponent } from './components/scoreboard/stand/stand.component';
 import { PracticeComponent } from './components/practice/practice.component';
 import { CardComponent } from './components/practice/card/card.component';
+import { ProblemComponent } from './components/problem/problem.component';
+import { LatexRenderDirective } from './directives/latex-render.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CardComponent } from './components/practice/card/card.component';
     NavbarComponent,
     StandComponent,
     PracticeComponent,
-    CardComponent
+    CardComponent,
+    ProblemComponent,
+    LatexRenderDirective
   ],
   imports: [
     BrowserModule,
