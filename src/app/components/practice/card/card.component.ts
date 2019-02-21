@@ -32,7 +32,7 @@ export class CardComponent implements OnInit {
     }
   }
 
-  private goToProblem():void {
+  goToProblem(): void {
     this.router.navigate(['problem']);
   }
 
