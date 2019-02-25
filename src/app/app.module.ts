@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './core/material.module';
@@ -19,6 +20,8 @@ import { PracticeComponent } from './components/practice/practice.component';
 import { CardComponent } from './components/practice/card/card.component';
 import { ProblemComponent } from './components/problem/problem.component';
 import { LatexRenderDirective } from './directives/latex-render.directive';
+
+import { ServicesModule } from './services/services.module'
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { LatexRenderDirective } from './directives/latex-render.directive';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ServicesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

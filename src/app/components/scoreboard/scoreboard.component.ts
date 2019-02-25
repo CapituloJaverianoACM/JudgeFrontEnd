@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FacadeService } from 'src/app/services/facade/facade.service';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-scoreboard',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreboardComponent implements OnInit {
 
-  constructor() { }
+  scoreboard: User[];
+
+  constructor(private facadeService: FacadeService) { }
 
   ngOnInit() {
+    this.facadeService.scoreboardService.getScoreboard().subscribe(
+      res => { this.scoreboard = res; console.log(this.scoreboard);
+      }
+    );
   }
 
 }

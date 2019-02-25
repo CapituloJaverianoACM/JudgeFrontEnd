@@ -6,30 +6,30 @@
         <fa name="facebook" size="2x" class="signup-form__icon"></fa>
         <fa name="google" size="2x" class="signup-form__icon"></fa>
       </div>
-      <form fxFlexAlign="center" fxLayout="column">
+      <form fxFlexAlign="center" fxLayout="column" (ngSubmit)="registerUser()" #registerForm="ngForm">
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Name" type="text">
+          <input matInput placeholder="Name" type="text" name="first_name" [(ngModel)]="userRegister.first_name" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Last Name" type="text">
+          <input matInput placeholder="Last Name" type="text" name="last_name" [(ngModel)]="userRegister.last_name" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email">
+          <input matInput placeholder="Email" name="email" [(ngModel)]="userRegister.email" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Phone Number</mat-label>
-          <input matInput placeholder="Phone Number">
+          <input matInput placeholder="Phone Number" name="phone_number" [(ngModel)]="userRegister.phone_number" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" type="password">
+          <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="userRegister.password">
         </mat-form-field>
+        <button mat-raised-button color="primary" class="login-invitation__btn" type="submit">Register</button>
       </form>
       <a mat-button href="#" fxFlexAlign="center" color="accent">Forgot your password?</a>
-      <button mat-raised-button color="primary" class="login-invitation__btn">Login</button>
     </div>
   </div>
   <div fxFlex="40%" class="login-invitation">

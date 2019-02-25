@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Problem } from 'src/app/shared/problem';
+import { Problem } from 'src/app/shared/problem.model';
 import { Difficulty } from 'src/app/shared/difficulty.enum';
 
 @Component({
@@ -34,6 +34,10 @@ export class CardComponent implements OnInit {
 
   goToProblem(): void {
     this.router.navigate(['problem']);
+  }
+
+  isProblemSolved(): boolean {
+    return (this.problem.score == 1);
   }
 
 }

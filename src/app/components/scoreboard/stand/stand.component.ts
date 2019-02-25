@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-stand',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StandComponent implements OnInit {
 
+  @Input() user:User
+
   constructor() { }
 
   ngOnInit() {
+    console.log('In Stand: ', this.user);
+    
   }
 
 }
