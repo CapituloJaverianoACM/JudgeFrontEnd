@@ -21,14 +21,13 @@ install:
 
 stages:
   - lint
-  - build
 
 jobs:
   include:
     - stage: lint
-    script: 
-      - ng lint
-      - ng build --prod --base-href https://capitulojaverianoacm.github.io/JudgeFrontEnd/
+      script: 
+        - ng lint
+        - ng build --prod --base-href https://capitulojaverianoacm.github.io/JudgeFrontEnd/
 
 deploy:
   provider: pages
