@@ -1,10 +1,10 @@
 <mat-card fxLayout="row" fxLayoutAlign="start center" class="stand mat-elevation-z5">
   <mat-card-header>1</mat-card-header>
   <div mat-card-avatar class="stand__avatar"></div>
-  <mat-card-header>Juan Pablo Peñaloza</mat-card-header>
+  <mat-card-header>{{ user.username }}</mat-card-header>
   <div fxFlex fxLayout="row" fxLayoutAlign="end center">
       <p>
-        {{ 8457802 | number }}
+        {{ (user.score || 0) | number }}
       </p>
   </div>
 </mat-card>
