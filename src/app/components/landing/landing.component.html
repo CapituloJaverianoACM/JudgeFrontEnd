@@ -1,0 +1,22 @@
+<div class="navivation">
+  <nav class="navigation__nav">
+      <button routerLink="/scoreboard" mat-button class="navigation__item">Scoreboard</button>
+      <button mat-button class="navigation__item">Resources</button>
+      <button mat-button class="navigation__item">Contact</button>
+      <button mat-button class="navigation__item">About us</button>
+      <div class="navigation__access">
+        <button mat-button (click)="openSignupDialogForm()" class="navigation__item">Signup</button>
+        <button mat-raised-button (click)="openLoginDialogForm()" color="accent" class="navigation__item navigation__item--button">Login</button>
+      </div>
+  </nav>
+</div>
+
+  <section class="figure"></section>
+
+  <header class="header">
+    <div class="header__text-box">
+      <h1 class="mat-display-4 header__heading">Welcome to XACM Judge!</h1>
+      <h2 class="mat-display-3 header__heading">Practice, compete and have fun!</h2>
+      <button mat-raised-button color="primary" class="header">Get started</button>
+    </div>
+  </header>

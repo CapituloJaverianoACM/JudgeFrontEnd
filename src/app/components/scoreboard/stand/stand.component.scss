@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+.stand {
+    margin: 1rem 10rem;
+    &__avatar {
+        background-image: url('https://randomuser.me/api/portraits/men/78.jpg');
+        background-size: cover;
+        margin-left: 2.25rem;
+    }
+
+    &:hover{
+        @include mat-elevation(15);
+    }
+}

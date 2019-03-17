@@ -1,46 +1,57 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustomMaterialModule } from './core/material.module';
+import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './core/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LandingComponent } from './components/landing/landing.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ScoreboardComponent } from './components/scoreboard/scoreboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { StandComponent } from './components/scoreboard/stand/stand.component';
+import { PracticeComponent } from './components/practice/practice.component';
+import { CardComponent } from './components/practice/card/card.component';
+import { ProblemComponent } from './components/problem/problem.component';
+import { LatexRenderDirective } from './directives/latex-render.directive';
 
-import 'hammerjs';
-import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ProblemasComponent } from './problemas/problemas.component';
-import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
-import { MySubmissionsComponent } from './my-submissions/my-submissions.component';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LandingComponent,
     LoginComponent,
-    HeaderComponent,
     SignupComponent,
-    ProfileComponent,
-    ProblemasComponent,
-    ProblemDescriptionComponent,
-    MySubmissionsComponent
+    ScoreboardComponent,
+    NavbarComponent,
+    StandComponent,
+    PracticeComponent,
+    CardComponent,
+    ProblemComponent,
+    LatexRenderDirective
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    CustomMaterialModule,
+    MaterialModule,
     FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule
+    AngularFontAwesomeModule,
+    ServicesModule,
+    FormsModule
   ],
   providers: [],
-  entryComponents: [LoginComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    LoginComponent,
+    SignupComponent
+  ]
 })
 export class AppModule { }

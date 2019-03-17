@@ -1,0 +1,16 @@
+<mat-card fxLayout="row" fxLayoutAlign="start center" class="problem-card stand mat-elevation-z5">
+  <mat-card-header>
+    <mat-card-title><h3 class="mat-display-1 problem-card__tittle">{{problem.name}}</h3></mat-card-title>
+    <!-- <mat-card-subtitle class="problem-card__subtittle"><span  [ngClass]="getDifficultyClass(problem.difficulty)" class="problem-card__subtittle--easy">{{problem.difficulty}}</span>, {{problem.category}}, Success Rate: {{problem.success_rate || 0 | percent}}</mat-card-subtitle> -->
+    <mat-card-subtitle class="problem-card__subtittle">Success Rate: {{problem.success_rate || 0 | percent}}</mat-card-subtitle>
+  </mat-card-header>
+  <div fxFlex fxLayout="row" fxLayoutAlign="end center">
+    <ng-container *ngIf="isProblemSolved(); else showNotSolvedButton">
+      <button mat-stroked-button color="accent" class="problem-card__button" (click)="goToProblem()"><span class="problem-card__button--text">Solved</span></button>
+    </ng-container>
+    <ng-template #showNotSolvedButton>
+        <button mat-raised-button color="accent" class="problem-card__button" (click)="goToProblem()"><span class="problem-card__button--text">Solve Problem</span></button>
+    </ng-template>
+    
+  </div>
+</mat-card>

@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div fxLayout="column" fxLayoutAlign="space-around center" class="scoreboard">
+  <h1 class="mat-display-4"> <span><fa name="trophy" size="1x" class="scoreboard__tittle"></fa></span> Scoreboard</h1>
+</div>
+<ng-container *ngIf="scoreboard">
+  <ng-container *ngFor="let stand of scoreboard">
+    <app-stand [user]="stand"></app-stand>
+  </ng-container>
+  
+</ng-container>
+

@@ -1,0 +1,20 @@
+<mat-sidenav-container class="navigation">
+  <nav>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Image" class="navigation__avatar">
+        <div fxFlex fxLayoutAlign="start" fxLayout="row" class="container">
+          <ul fxFlex fxLayout="row" >
+            <li><button routerLink="/practice" mat-button class="navigation__link" routerLinkActive="navigation__link--active">Practice</button></li>
+            <li><button routerLink="/scoreboard" mat-button class="navigation__link" routerLinkActive="navigation__link--active">Scoreboard</button></li>
+            <li><button mat-button class="navigation__link">Submissions</button></li>
+            <li><button mat-button class="navigation__link">About us</button></li>
+            <div fxFlex fxLayout="row" fxLayoutAlign="end" class="container">
+              <li><button mat-button class="navigation__link"> <mat-icon class="navigation__profile-icon">person_outline</mat-icon> juan_penaloza</button></li>
+            </div>
+          </ul>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</mat-sidenav-container>

@@ -1,0 +1,28 @@
+@import '../../../abstract/variables.scss';
+
+.container {
+    width: 50vw;
+}
+.signup-invitation {    
+    &__btn {
+        text-transform: uppercase;
+    }
+}
+
+.login-form {
+    
+    &__input-field {
+        width: 100%;
+    }
+
+    &__icon {
+        color: $color-primary;
+        background-color: transparent;
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+
+}
+
+.close-btn {
+    cursor: pointer;
+}

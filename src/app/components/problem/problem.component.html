@@ -1,0 +1,28 @@
+<ng-container *ngIf="problem">
+  <app-navbar></app-navbar>
+  <div fxLayout="column" fxLayoutAlign="space-around center" class="problem">
+    <h1 class="mat-display-4 problem__title">{{problem.name}}</h1>
+    <h3 class="mat-subheading-2 problem__title">Daniela Cortes Antonio</h3>
+    <h3 class="mat-subheading-1 problem__title">Eassy</h3>
+    <mat-card class="problem__card mat-elevation-z5">
+      <mat-card-title><h3 class="mat-display-2 problem__section-heading">Problem Statement</h3></mat-card-title>
+      <mat-card-content>
+        <p class="mat-body-1" [latexContent]="problem.description.statement" appLatexRender></p>
+      </mat-card-content>
+      <mat-card-title><h3 class="mat-display-2 problem__section-heading">Input Format</h3></mat-card-title>
+      <mat-card-content>
+        <p class="mat-body-1" [latexContent]="problem.description.input_format" appLatexRender></p>
+      </mat-card-content>
+      <mat-card-title><h3 class="mat-display-2 problem__section-heading">Output Format</h3></mat-card-title>
+      <mat-card-content>
+        <p class="mat-body-1" [latexContent]="problem.description.output_format" appLatexRender></p>
+      </mat-card-content>
+    </mat-card>
+    <div fxLayout="row" fxLayoutAlign="end center" class="problem__buttons-box" fxLayoutGap="50px">
+      <button mat-stroked-button class="problem__button" color="accent" disabled>Run Test Cases</button>
+      <input hidden type="file" (change)="submitFile()" #fileInput>
+      <button mat-raised-button class="problem__button" color="accent" (click)="addFiles()">Submit File</button>
+    </div>
+  </div>
+</ng-container>
+
