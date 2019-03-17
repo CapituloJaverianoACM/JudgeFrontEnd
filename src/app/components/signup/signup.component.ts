@@ -13,7 +13,7 @@ import { log } from 'util';
 })
 export class SignupComponent implements OnInit {
 
-  private userRegister: User = {
+  userRegister: User = {
     first_name: 'Juan',
     last_name: 'Peñaloza',
     username: 'juanpa097',

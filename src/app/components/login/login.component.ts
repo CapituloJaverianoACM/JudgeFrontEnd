@@ -11,7 +11,7 @@ import { FacadeService } from 'src/app/services/facade/facade.service';
 })
 export class LoginComponent implements OnInit {
 
-  private userCredentials: User = {
+  userCredentials: User = {
     first_name: 'Juan',
     last_name: 'Peñaloza',
     username: 'juanpa097',
