@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Problem } from 'src/app/shared/problem.model';
 import { Difficulty } from 'src/app/shared/difficulty.enum';
 import { FacadeService } from 'src/app/services/facade/facade.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-practice',
@@ -12,7 +13,10 @@ export class PracticeComponent implements OnInit {
 
   problemList: Problem[];
 
-  constructor(private facadeService: FacadeService) { }
+  constructor(
+    private facadeService: FacadeService,
+    private router: Router
+    ) { }
 
   // dummyProblems: Problem[] = [
   //   {name: 'Solve me first', difficulty: Difficulty.Easy, category: 'Arrays', success_rate: 0.93, isSolved: false},

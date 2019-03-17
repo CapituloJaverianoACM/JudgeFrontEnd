@@ -17,11 +17,12 @@
       <mat-card-content>
         <p class="mat-body-1" [latexContent]="problem.description.output_format" appLatexRender></p>
       </mat-card-content>
-      <mat-card-title><h3 class="mat-display-2 problem__section-heading">Constrains</h3></mat-card-title>
-      <mat-card-content>
-        <p class="mat-body-1" [latexContent]="constrains" appLatexRender></p>
-      </mat-card-content>
     </mat-card>
+    <div fxLayout="row" fxLayoutAlign="end center" class="problem__buttons-box" fxLayoutGap="50px">
+      <button mat-stroked-button class="problem__button" color="accent" disabled>Run Test Cases</button>
+      <input hidden type="file" (change)="submitFile()" #fileInput>
+      <button mat-raised-button class="problem__button" color="accent" (click)="addFiles()">Submit File</button>
+    </div>
   </div>
 </ng-container>
 

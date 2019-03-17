@@ -21,7 +21,7 @@ import { CardComponent } from './components/practice/card/card.component';
 import { ProblemComponent } from './components/problem/problem.component';
 import { LatexRenderDirective } from './directives/latex-render.directive';
 
-import { ServicesModule } from './services/services.module'
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [

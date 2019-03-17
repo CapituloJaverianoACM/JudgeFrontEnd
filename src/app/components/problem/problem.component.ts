@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Problem } from 'src/app/shared/problem.model';
 import { FacadeService } from 'src/app/services/facade/facade.service';
+import { Submission } from 'src/app/shared/submission.model';
+import { Language } from 'src/app/shared/language.enum';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-problem',
@@ -10,20 +13,40 @@ import { FacadeService } from 'src/app/services/facade/facade.service';
 export class ProblemComponent implements OnInit {
 
   problem: Problem;
+  @ViewChild('fileInput') fileInput;
 
-  probDescription = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. $x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$ Aenean commodo ligula
-  eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec quam felis,
-  ultricies nec, pellentesque eu, pretium quis, sem. $$\\Delta x=\\int_{t_0}^{t_1} v(t)dt$$Nulla consequat massa quis enim.Donec
-  pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.`;
-  
-  constrains = '$1 < n < 10^{9}$';
-  
-  constructor(private facadeService: FacadeService) { }
-  
+  constructor(
+    private facadeService: FacadeService,
+    private route: ActivatedRoute
+  ) { }
+
   ngOnInit() {
-    this.facadeService.practiceService.getSingleProblem(1).subscribe(
-      res => this.problem = res
-    );
+    this.route.params.subscribe(params => {
+      this.facadeService.practiceService.getSingleProblem(params.id).subscribe(
+        res => this.problem = res
+      );
+    });
+  }
+
+  /**
+   * Gets a file from the computer and sends it to
+   * the service to send it to the backend.
+   */
+  submitFile(): void {
+    const sourceCodeFile = this.fileInput.nativeElement.files[0];
+    const sumbission: Submission = {
+      problem: this.problem.id,
+      source_code: sourceCodeFile,
+      language: Language.Python2
+    };
+    this.facadeService.submissionService.postSubmission(sumbission).subscribe();
+  }
+
+  /**
+   * Opens the file explorer to upload files.
+   */
+  addFiles(): void {
+    this.fileInput.nativeElement.click();
   }
 
 }

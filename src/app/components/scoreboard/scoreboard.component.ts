@@ -15,8 +15,7 @@ export class ScoreboardComponent implements OnInit {
 
   ngOnInit() {
     this.facadeService.scoreboardService.getScoreboard().subscribe(
-      res => { this.scoreboard = res; console.log(this.scoreboard);
-      }
+      res => { this.scoreboard = res; }
     );
   }
 

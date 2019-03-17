@@ -8,13 +8,11 @@ import { User } from 'src/app/shared/user.model';
 })
 export class StandComponent implements OnInit {
 
-  @Input() user:User
+  @Input() user: User;
 
   constructor() { }
 
   ngOnInit() {
-    console.log('In Stand: ', this.user);
-    
   }
 
 }

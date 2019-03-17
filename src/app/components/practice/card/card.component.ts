@@ -33,11 +33,11 @@ export class CardComponent implements OnInit {
   }
 
   goToProblem(): void {
-    this.router.navigate(['problem']);
+    this.router.navigate(['problem', this.problem.id]);
   }
 
   isProblemSolved(): boolean {
-    return (this.problem.score == 1);
+    return (this.problem.score === 1);
   }
 
 }

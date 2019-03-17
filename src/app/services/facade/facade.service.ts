@@ -2,6 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { ScoreboardService } from '../scoreboard/scoreboard.service';
 import { PracticeService } from '../practice/practice.service';
+import { SubmissionService } from '../submission/submission.service';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,14 @@ export class FacadeService {
       this._practiceService = this.injector.get(PracticeService);
     }
     return this._practiceService;
+  }
+
+  private _submissionService: SubmissionService;
+  public get submissionService(): SubmissionService {
+    if (!this._submissionService) {
+      this._submissionService = this.injector.get(SubmissionService);
+    }
+    return this._submissionService;
   }
 
 

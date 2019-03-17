@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  
-  readonly SIGNUP_END_POINT = API_URL + 'users/signup/'
-  readonly LOGIN_END_POINT = API_URL + 'login/'
+
+  readonly SIGNUP_END_POINT = API_URL + 'users/signup/';
+  readonly LOGIN_END_POINT = API_URL + 'login/';
 
   private _token: string;
   public get token(): string {
-    if(!this._token) {
-      this._token = localStorage.getItem('token'); 
+    if (!this._token) {
+      this._token = localStorage.getItem('token');
     }
     return this._token;
   }
@@ -28,10 +28,6 @@ export class AuthenticationService {
 
   loginUser(userCredentials: User): Observable<any> {
     return this.http.post(this.LOGIN_END_POINT, userCredentials);
-  }
-
-  isServiceAlive(): void {
-    console.log("Hello, Authentication is alive");
   }
 
   saveToken(token: string): void {

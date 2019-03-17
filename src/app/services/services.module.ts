@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FacadeService } from './facade/facade.service'
-import { AuthenticationService } from './authentication/authentication.service'
+import { FacadeService } from './facade/facade.service';
+import { AuthenticationService } from './authentication/authentication.service';
+
+import { httpInterceptorProviders } from './http-interceptors/httpInterceptors';
 
 @NgModule({
   declarations: [],
@@ -13,7 +15,8 @@ import { AuthenticationService } from './authentication/authentication.service'
   ],
   providers: [
     FacadeService,
-    AuthenticationService,
+    AuthenticationService, // TODO - I think i can delete this line
+    httpInterceptorProviders
   ]
 })
 export class ServicesModule { }

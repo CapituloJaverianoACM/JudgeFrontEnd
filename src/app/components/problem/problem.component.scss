@@ -1,3 +1,5 @@
+@import '../../../abstract/variables.scss';
+
 .problem {
     margin: 2rem 10rem;
 
@@ -12,5 +14,17 @@
 
     &__section-heading {
         margin: 3rem 0 1rem;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 100;
+        min-width: 20rem;
+        padding: 0.5rem 6rem;
+    }
+
+    &__buttons-box {
+        width: 100%;
     }
 }

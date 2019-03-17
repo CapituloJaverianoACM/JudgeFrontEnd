@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'scoreboard', component: ScoreboardComponent },
   { path: 'practice', component: PracticeComponent },
-  { path: 'problem', component: ProblemComponent }
+  { path: 'problem/:id', component: ProblemComponent }
 ];
 
 @NgModule({

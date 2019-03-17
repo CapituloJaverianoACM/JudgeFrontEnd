@@ -13,7 +13,7 @@ import { log } from 'util';
 })
 export class SignupComponent implements OnInit {
 
-  private userRegister:User = {
+  private userRegister: User = {
     first_name: 'Juan',
     last_name: 'Peñaloza',
     username: 'juanpa097',
@@ -28,9 +28,7 @@ export class SignupComponent implements OnInit {
     private facadeService: FacadeService
     ) { }
 
-  ngOnInit() {
-    this.facadeService.authenticationService.isServiceAlive();
-  }
+  ngOnInit() { }
 
   /**
    * Closes the dialog window.
@@ -40,12 +38,7 @@ export class SignupComponent implements OnInit {
   }
 
   registerUser(): void {
-    this.facadeService.authenticationService.registerUser(this.userRegister).subscribe(
-      res => {
-        console.log(res);
-        
-      }
-    )
+    this.facadeService.authenticationService.registerUser(this.userRegister).subscribe();
   }
 
 }

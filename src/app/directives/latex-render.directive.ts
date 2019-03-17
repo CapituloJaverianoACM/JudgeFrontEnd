@@ -40,7 +40,6 @@ export class LatexRenderDirective implements OnInit {
    */
   private renderLatexExpression(expression: string, options: KatexOptions): string {
     expression = expression.replace(/\$/g, '');
-    console.log(expression);
     return katex.renderToString(expression, options); // TODO - Handle latex format errors.
   }
 

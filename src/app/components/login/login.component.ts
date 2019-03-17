@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // TODO - Fixme 
+  // TODO - Fixme
   loginUser(): void {
     this.facadeService.authenticationService.loginUser(this.userCredentials).subscribe(
       res => this.facadeService.authenticationService.saveToken(res['token'])
-    )    
+    );
   }
 
 }

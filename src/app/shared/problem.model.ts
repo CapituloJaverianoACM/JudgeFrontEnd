@@ -2,7 +2,7 @@ import { Difficulty } from './difficulty.enum';
 import { Description } from './description.model';
 
 export interface Problem {
-    id: number
+    id: number;
     score?: number;
     description?: Description;
     name: string;
