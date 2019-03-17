@@ -26,13 +26,12 @@ stages:
 jobs:
   include:
     - stage: lint
-    - script: ng lint
-    - stage: build
-    - script: ng build --prod --base-href https://capitulojaverianoacm.github.io/JudgeFrontEnd/
+    script: 
+      - ng lint
+      - ng build --prod --base-href https://capitulojaverianoacm.github.io/JudgeFrontEnd/
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist/my-app
-  
