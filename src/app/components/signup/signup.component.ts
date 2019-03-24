@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { FacadeService } from '../../services/facade/facade.service';
 import { User } from 'src/app/shared/user.model';
-import { log } from 'util';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,22 +14,18 @@ import { log } from 'util';
 })
 export class SignupComponent implements OnInit {
 
-  userRegister: User = {
-    first_name: 'Juan',
-    last_name: 'Peñaloza',
-    username: 'juanpa097',
-    email: 'jaun@gmail.com',
-    password: '123456789',
-    phone_number: '3103179283',
-    course: 1
-  };
+  registerForm: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
-    private facadeService: FacadeService
+    private facadeService: FacadeService,
+    private formBuilder: FormBuilder,
+    private route: Router,
     ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.buildRegisterForm();
+  }
 
   /**
    * Closes the dialog window.
@@ -37,8 +34,28 @@ export class SignupComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  /**
+   * Sends the information from the form
+   * to the backend.
+   */
   registerUser(): void {
-    this.facadeService.authenticationService.registerUser(this.userRegister).subscribe();
+    const userToRegister = this.registerForm.value as User;
+    userToRegister.course = 1;
+    this.facadeService.authenticationService.registerUser(userToRegister).subscribe(res => {
+      this.route.navigate(['practice']);
+      this.onCloseClicked();
+    });
+  }
+
+  private buildRegisterForm(): void {
+    this.registerForm = this.formBuilder.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required,Validators.min(6)]],
+      phone: ['', [Validators.required, Validators.min(10)]]
+    });
   }
 
 }

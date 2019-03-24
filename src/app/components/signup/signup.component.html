@@ -6,28 +6,32 @@
         <fa name="facebook" size="2x" class="signup-form__icon"></fa>
         <fa name="google" size="2x" class="signup-form__icon"></fa>
       </div>
-      <form fxFlexAlign="center" fxLayout="column" (ngSubmit)="registerUser()" #registerForm="ngForm">
+      <form fxFlexAlign="center" fxLayout="column" (ngSubmit)="registerUser()" [formGroup]="registerForm">
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Name" type="text" name="first_name" [(ngModel)]="userRegister.first_name" required>
+          <input matInput placeholder="Name" type="text" name="first_name" formControlName="first_name" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Last Name" type="text" name="last_name" [(ngModel)]="userRegister.last_name" required>
+          <input matInput placeholder="Last Name" type="text" name="last_name" formControlName="last_name" required>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="signup-form__input-field">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" type="text" name="username" formControlName="username" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" name="email" [(ngModel)]="userRegister.email" required>
+          <input matInput placeholder="Email" name="email" formControlName="email" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Phone Number</mat-label>
-          <input matInput placeholder="Phone Number" name="phone_number" [(ngModel)]="userRegister.phone_number" required>
+          <input matInput placeholder="Phone Number" name="phone" formControlName="phone" required>
         </mat-form-field>
         <mat-form-field appearance="legacy" class="signup-form__input-field">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="userRegister.password">
+          <input matInput placeholder="Password" type="password" name="password" formControlName="password">
         </mat-form-field>
-        <button mat-raised-button color="primary" class="login-invitation__btn" type="submit">Register</button>
+        <button mat-raised-button color="primary" class="login-invitation__btn" type="submit" [disabled]="!registerForm.valid">Register</button>
       </form>
       <a mat-button href="#" fxFlexAlign="center" color="accent">Forgot your password?</a>
     </div>
@@ -39,7 +43,7 @@
     <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-evenly center">
       <h1 fxFlexAlign="center" class="mat-display-2 login-invitation__heading">Welcome Back!</h1>
       <p class="mat-body">To keep practicing and progressing please login with your personal information</p>
-      <button mat-stroked-button color="accent" class="login-invitation__btn">Login</button>
+      <button mat-stroked-button color="accent" class="login-invitation__btn" disabled>Login</button>
     </div>
   </div>
 </div>

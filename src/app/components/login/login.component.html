@@ -7,7 +7,7 @@
              fxLayoutAlign="space-evenly center">
             <h1 fxFlexAlign="center" class="mat-display-2" >Hello, Friend!</h1>
             <p class="mat-body">Enter your personal information and start training with us!</p>
-            <button mat-stroked-button color="accent" class="signup-invitation__btn">Signup</button>
+            <button mat-stroked-button color="accent" class="signup-invitation__btn" disabled>Signup</button>
         </div>
     </div>
     <div fxFlex="60%">
@@ -20,19 +20,20 @@
                 <fa name="facebook" size="2x" class="login-form__icon"></fa>
                 <fa name="google" size="2x" class="login-form__icon"></fa>
             </div>
-            <form fxFlexAlign="center" (ngSubmit)="loginUser()" #loginForm="ngForm">
+            <form fxFlexAlign="center" (ngSubmit)="loginUser()" [formGroup]="loginForm">
                 <mat-form-field appearance="legacy" class="login-form__input-field">
                     <mat-label>Username</mat-label>
-                    <input matInput placeholder="Username" name="username" [(ngModel)]="userCredentials.username">
+                    <input matInput placeholder="Username" name="username" formControlName="username">
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="login-form__input-field">
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="userCredentials.password">
+                    <input matInput placeholder="Password" type="password" name="password" formControlName="password">
                 </mat-form-field>
-                <button mat-raised-button fxFlexAlign="center" color="primary" class="signup-invitation__btn" type="submit">Login</button>
+                <div fxLayout="row">
+                    <button fxFlex mat-raised-button fxFlexAlign="center" color="primary" class="signup-invitation__btn" type="submit" [disabled]="!loginForm.valid">Login</button>
+                </div>
             </form>
             <a mat-button href="#" fxFlexAlign="center" color="accent">Forgot your password?</a>
-
         </div>
     </div>
 </div>

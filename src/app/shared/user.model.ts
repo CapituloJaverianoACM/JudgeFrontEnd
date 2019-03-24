@@ -5,6 +5,6 @@ export interface User {
     email?: string;
     password?: string;
     course?: number;
-    phone_number?: string;
+    phone?: string;
     score?: number;
 }

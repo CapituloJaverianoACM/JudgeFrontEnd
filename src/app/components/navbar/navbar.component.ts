@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FacadeService } from 'src/app/services/facade/facade.service';
+import { AuthGuard } from 'src/app/auth/auth.guard';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private facadeService: FacadeService,
+    private authGuard: AuthGuard
+  ) { }
 
   ngOnInit() {
+  }
+
+  logout(): void {
+    this.facadeService.authenticationService.logout();
   }
 
 }

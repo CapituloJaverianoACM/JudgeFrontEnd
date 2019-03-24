@@ -9,6 +9,7 @@ import { User } from 'src/app/shared/user.model';
 export class StandComponent implements OnInit {
 
   @Input() user: User;
+  @Input() position: number;
 
   constructor() { }
 
