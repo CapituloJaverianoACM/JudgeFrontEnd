@@ -27,7 +27,7 @@ jobs:
     - stage: lint
       script: 
         - ng lint
-        - ng build --prod --base-href https://capitulojaverianoacm.github.io/JudgeFrontEnd/
+        - ng build --prod
 
 deploy:
   provider: pages
