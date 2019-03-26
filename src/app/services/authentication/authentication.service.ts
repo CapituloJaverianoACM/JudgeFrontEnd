@@ -14,7 +14,7 @@ export class AuthenticationService {
   readonly LOGIN_END_POINT = API_URL + 'login/';
 
   private _token: string;
-  isLoggedIn: boolean = false;
+  isLoggedIn = false;
   public get token(): string {
     if (!this._token) {
       this._token = localStorage.getItem('token');
@@ -49,7 +49,7 @@ export class AuthenticationService {
   }
 
   /**
-   * Clears the local storage token and sets 
+   * Clears the local storage token and sets
    * the isLoggedIn flag to false.
    */
   logout(): void {
@@ -73,9 +73,8 @@ export class AuthenticationService {
       alert(errorDescription);
     }
     // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
-  };
+    return throwError('Something bad happened; please try again later.');
+  }
 
 
 }

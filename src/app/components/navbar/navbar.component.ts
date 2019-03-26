@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private facadeService: FacadeService,
-    private authGuard: AuthGuard
+    public authGuard: AuthGuard
   ) { }
 
   ngOnInit() {
