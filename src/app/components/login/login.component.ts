@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   loginUser(): void {
     const userCredentials = this.loginForm.value as User;
     this.facadeService.authenticationService.loginUser(userCredentials).subscribe(
-      res => {        
+      res => {
         this.facadeService.authenticationService.saveToken(res['token']);
         this.route.navigate(['practice']);
         this.onCloseClicked();

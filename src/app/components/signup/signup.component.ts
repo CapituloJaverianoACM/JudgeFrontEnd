@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
     private route: Router,
     ) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.buildRegisterForm();
   }
 
@@ -53,7 +53,7 @@ export class SignupComponent implements OnInit {
       last_name: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.min(6)]],
+      password: ['', [Validators.required, Validators.min(6)]],
       phone: ['', [Validators.required, Validators.min(10)]]
     });
   }
