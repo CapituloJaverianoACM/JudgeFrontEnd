@@ -35,4 +35,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist/my-app
   on:
-    branch: dev2
+    branch: 
+      - dev2
+      - master
