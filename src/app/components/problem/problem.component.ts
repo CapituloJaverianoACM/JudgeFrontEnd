@@ -39,7 +39,11 @@ export class ProblemComponent implements OnInit {
       source_code: sourceCodeFile,
       language: Language.Python2
     };
-    this.facadeService.submissionService.postSubmission(sumbission).subscribe();
+    this.facadeService.submissionService.postSubmission(sumbission).subscribe(
+      ans => {
+        alert("Code submited success")
+      }
+    );
   }
 
   /**
