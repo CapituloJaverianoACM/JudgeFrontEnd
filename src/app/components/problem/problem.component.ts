@@ -37,9 +37,13 @@ export class ProblemComponent implements OnInit {
     const sumbission: Submission = {
       problem: this.problem.id,
       source_code: sourceCodeFile,
-      language: Language.Python2
+      language: Language.Python3
     };
-    this.facadeService.submissionService.postSubmission(sumbission).subscribe();
+    this.facadeService.submissionService.postSubmission(sumbission).subscribe(
+      ans => {
+        alert('Code submited success');
+      }
+    );
   }
 
   /**

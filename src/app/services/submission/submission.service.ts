@@ -21,4 +21,7 @@ export class SubmissionService {
     return this.http.post<Submission>(this.SUBMISSION_END_POINT, formData);
   }
 
+  getSubmissions(): Observable<Submission[]> {
+    return this.http.get<Submission[]>(this.SUBMISSION_END_POINT);
+  }
 }

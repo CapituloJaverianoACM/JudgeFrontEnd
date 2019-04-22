@@ -14,7 +14,7 @@ export class AuthenticationService {
   readonly LOGIN_END_POINT = API_URL + 'login/';
 
   private _token: string;
-  isLoggedIn = false;
+
   public get token(): string {
     if (!this._token) {
       this._token = localStorage.getItem('token');
@@ -22,7 +22,7 @@ export class AuthenticationService {
     return this._token;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   registerUser(userToRegister: User): Observable<string> {
     return this.http.post<string>(this.SIGNUP_END_POINT, userToRegister).
@@ -45,7 +45,7 @@ export class AuthenticationService {
    */
   saveToken(token: string): void {
     localStorage.setItem('token', token);
-    this.isLoggedIn = true;
+    // this.isLoggedIn = true;
   }
 
   /**
@@ -54,8 +54,19 @@ export class AuthenticationService {
    */
   logout(): void {
     localStorage.removeItem('token');
-    this.isLoggedIn = false;
+    this._token = null;
+    // this.isLoggedIn = false;
   }
+  /**
+   * Get user by token
+   */
+   getUser(): Observable<User> {
+     return this.http.get<User>(this.LOGIN_END_POINT);
+   }
+
+   isLoggedIn(): boolean {
+     return this.token != null;
+   }
 
 
   private handleError(error: HttpErrorResponse) {
