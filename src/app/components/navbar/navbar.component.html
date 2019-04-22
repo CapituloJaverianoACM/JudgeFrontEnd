@@ -8,7 +8,7 @@
             <li *ngIf="!authGuard.canActivate()"><button routerLink="/" mat-button class="navigation__link">Home</button></li>
             <li *ngIf="authGuard.canActivate()"><button routerLink="/practice" mat-button class="navigation__link" routerLinkActive="navigation__link--active">Practice</button></li>
             <li><button routerLink="/scoreboard" mat-button class="navigation__link" routerLinkActive="navigation__link--active">Scoreboard</button></li>
-            <li *ngIf="authGuard.canActivate()"><button mat-button class="navigation__link">Submissions</button></li>
+            <li *ngIf="authGuard.canActivate()"><button routerLink="/submissions" mat-button class="navigation__link">Submissions</button></li>
             <li><button mat-button class="navigation__link">About us</button></li>
             <div fxFlex fxLayout="row" fxLayoutAlign="end" class="container">
               <li *ngIf="authGuard.canActivate()"><button mat-button class="navigation__link" (click)="logout()" routerLink="/"> <mat-icon class="navigation__profile-icon">person_outline</mat-icon>Logout</button></li>

@@ -22,6 +22,8 @@ import { ProblemComponent } from './components/problem/problem.component';
 import { LatexRenderDirective } from './directives/latex-render.directive';
 
 import { ServicesModule } from './services/services.module';
+import { SubmissionComponent } from './components/submission/submission.component';
+import { SubmissionsComponent } from './components/submissions/submissions.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ServicesModule } from './services/services.module';
     PracticeComponent,
     CardComponent,
     ProblemComponent,
-    LatexRenderDirective
+    LatexRenderDirective,
+    SubmissionComponent,
+    SubmissionsComponent
   ],
   imports: [
     BrowserModule,

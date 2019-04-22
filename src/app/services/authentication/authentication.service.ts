@@ -45,7 +45,7 @@ export class AuthenticationService {
    */
   saveToken(token: string): void {
     localStorage.setItem('token', token);
-    //this.isLoggedIn = true;
+    // this.isLoggedIn = true;
   }
 
   /**
@@ -55,16 +55,16 @@ export class AuthenticationService {
   logout(): void {
     localStorage.removeItem('token');
     this._token = null;
-    //this.isLoggedIn = false;
+    // this.isLoggedIn = false;
   }
   /**
    * Get user by token
    */
-   getUser(): Observable<User>{
+   getUser(): Observable<User> {
      return this.http.get<User>(this.LOGIN_END_POINT);
    }
 
-   isLoggedIn(): boolean{
+   isLoggedIn(): boolean {
      return this.token != null;
    }
 
